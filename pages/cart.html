@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+/>
+    <link rel="stylesheet" href="../styles/index.css" />
+    <style>
+      #cart-content {
+        display: flex;
+        width: 100%;
+      }
+      #cart-items {
+        width: 60%;
+      }
+      #cart-header {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      #cart-header h1 {
+        color: var(--gold);
+        font-size: 32px;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+      #cart-header p {
+        color: var(--gray);
+        font-size: 16px;
+      }
+      .card-item {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+        margin-left: 3px;
+        margin-right: 3px;
+        margin-bottom: 10px;
+        align-items: center;
+        padding: 20px;
+        background-color: var(--black);
+        border-radius: 10px;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        transition: all 0.3s ease;
+      }
+      .card-item:hover {
+        border-color: var(--gold);
+        box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+        transform: translateX(5px);
+      }
+      .item-control {
+        display: flex;
+      }
+      .cart-item-image {
+        height: 150px;
+        width: 150px;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 2px solid var(--gold);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        object-fit: fill;
+      }
+      .cart-item-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      .card-item:hover .cart-item-image img {
+        transform: scale(1.05);
+      }
+      .item-info {
+        color: var(--white);
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .item-control {
+        display: flex;
+        align-items: center;
+        width: 100px;
+        justify-content: space-between;
+      }
+      .adding-minus-button {
+        border: 1px solid var(--gold);
+        background-color: var(--dark-gray);
+        color: var(--gold);
+        height: 35px;
+        width: 35px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+      }
+      .adding-minus-button:hover {
+        background-color: var(--gold);
+        color: var(--black);
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+      }
+
+      .current-item-count {
+        color: var(--gold);
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+      }
+      .item-price {
+        color: var(--gold);
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .delete-item {
+        background: transparent;
+        border: 1px solid #ff4444;
+        color: #ff4444;
+        height: 35px;
+        width: 35px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .delete-item:hover {
+        background-color: #ff4444;
+        color: var(--white);
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(255, 68, 68, 0.5);
+      }
+      #checkout-section {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+      }
+      #summary {
+        color: var(--gold);
+        font-size: 28px;
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid var(--gold);
+        width: 100%;
+        text-align: center;
+      }
+
+      #total-price {
+        color: var(--white);
+        font-size: 22px;
+        margin-bottom: 30px;
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        background-color: var(--black);
+        border-radius: 8px;
+        border: 1px solid var(--gold);
+      }
+
+      #total-price span {
+        color: var(--gold);
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      #checkout-button {
+        width: 100%;
+        padding: 15px 30px;
+        background-color: var(--gold);
+        color: var(--black);
+        border: none;
+        border-radius: 8px;
+        font-family: "Playwrite DE SAS", cursive;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+      }
+
+      #checkout-button:hover {
+        background-color: var(--gold-hover);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div id="logo-container">
+        <a><img id="logo-image" src="../assets/images/7889361.jpg" /></a>
+      </div>
+      <div id="nav-items">
+        <div class="single-nav-item">
+          <a>Home</a>
+        </div>
+        <div class="vertical-line"></div>
+        <div class="single-nav-item">
+          <a>About</a>
+        </div>
+        <div class="vertical-line"></div>
+        <div
+          class="single-nav-item"
+          style="margin-left: 5px; margin-right: 5px"
+        >
+          <a>Contact Us</a>
+        </div>
+        <div class="vertical-line"></div>
+        <div class="custom-select-wrapper">
+          <select class="custom-select">
+            <option value="arabic">Arabic</option>
+            <option value="english" selected>English</option>
+          </select>
+          <i class="fas fa-chevron-down select-arrow"></i>
+        </div>
+              <div class="vertical-line"></div>
+      <div class="single-nav-item" style="margin-left:5px;margin-right:5px">
+        <a id="logout">Log Out</a>
+      </div>
+    </div>
+      </div>
+    </nav>
+    <section id="cart-content">
+      <section id="cart-items">
+        <div id="cart-header">
+          <h1>Shopping Cart</h1>
+          <p id="items-count"></p>
+        </div>
+
+      </section>
+      <section id="checkout-section">
+        <div>
+          <h2 id="summary">Summary</h2>
+          <p id="total-price">Total Price is: 100$</p>
+          <button id="checkout-button">Check Out</button>
+        </div>
+      </section>
+    </section>
+    <script src="../js/cart.js"></script>
+      <script src="../js/auth.js"></script>
+
+  </body>
+</html>

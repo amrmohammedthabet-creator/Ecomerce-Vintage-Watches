@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+SAS:wght@100..400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/index.css" />
+</head>
+
+<body>
+  <nav>
+    <div id="logo-container">
+      <a><img id="logo-image" src="../assets/images/7889361.jpg" /></a>
+    </div>
+    <div id="nav-items">
+      <div class="single-nav-item">
+        <a>Home</a>
+      </div>
+      <div class="vertical-line"></div>
+      <div class="single-nav-item">
+        <a>About</a>
+      </div>
+      <div class="vertical-line"></div>
+      <div class="single-nav-item" style="margin-left: 5px; margin-right: 5px">
+        <a href="./cart.html">Cart</a>
+      </div>
+
+      <div class="vertical-line"></div>
+      <div class="custom-select-wrapper">
+        <select class="custom-select">
+          <option value="arabic">Arabic</option>
+          <option value="english" selected>English</option>
+        </select>
+        <i class="fas fa-chevron-down select-arrow"></i>
+      </div>
+      <div class="vertical-line"></div>
+      <div class="single-nav-item" style="margin-left: 5px; margin-right: 5px">
+        <a id="logout">Log Out</a>
+      </div>
+    </div>
+  </nav>
+  <section id="banner">
+    <div class="mySlides fade">
+      <div class="numbertext" id="slider-number">1 / 3</div>
+      <img id="slider-image" />
+      <div class="text" id="slider-image-caption">Caption Text</div>
+    </div>
+
+    <a class="prev" id="prevButton">&#10094;</a>
+    <a class="next" id="nextButton">&#10095;</a>
+    <br />
+
+    <div style="text-align: center">
+      <span class="dot"></span>
+    </div>
+  </section>
+  <section id="products">
+    <h2 id="product-title">Our Products</h2>
+    <div id="products-list"></div>
+  </section>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3><i class="fas fa-store"></i> SmileShop</h3>
+        <p>
+          Your premium destination for quality products. We offer the best
+          deals with exceptional customer service.
+        </p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3><i class="fas fa-link"></i> Quick Links</h3>
+        <p><a href="#">Home</a></p>
+        <p><a href="#">About Us</a></p>
+        <p><a href="#">Products</a></p>
+        <p><a href="#">Contact</a></p>
+        <p><a href="#">FAQ</a></p>
+      </div>
+
+      <div class="footer-section">
+        <h3><i class="fas fa-envelope"></i> Contact Info</h3>
+        <p>
+          <i class="fas fa-map-marker-alt"></i> 123 Main Street, Cairo, Egypt
+        </p>
+        <p><i class="fas fa-phone"></i> +20 123 456 7890</p>
+        <p><i class="fas fa-envelope"></i> info@smileshop.com</p>
+        <p><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 8:00 PM</p>
+      </div>
+
+      <div class="footer-section">
+        <h3><i class="fas fa-newspaper"></i> Newsletter</h3>
+        <p>Subscribe to get special offers and updates!</p>
+        <form style="margin-top: 15px">
+          <input type="email" placeholder="Your email" style="
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                background-color: var(--black);
+                border: 1px solid var(--gold);
+                border-radius: 5px;
+                color: var(--white);
+                font-family: inherit;
+              " />
+          <button type="submit" style="
+                width: 100%;
+                padding: 10px;
+                background-color: var(--gold);
+                border: none;
+                border-radius: 5px;
+                color: var(--black);
+                font-weight: bold;
+                cursor: pointer;
+                font-family: inherit;
+                transition: all 0.3s ease;
+              ">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        &copy; 2026 <span>SmileShop</span>. All Rights Reserved. | Designed
+        with <i class="fas fa-heart" style="color: var(--gold)"></i> by You
+      </p>
+    </div>
+  </footer>
+  <script src="../js/index.js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+
+</html>
