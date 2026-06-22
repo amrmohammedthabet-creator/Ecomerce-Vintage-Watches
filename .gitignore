@@ -1,0 +1,59 @@
+# ============================================================
+# .gitignore - Web Project (HTML, CSS, JavaScript)
+# ============================================================
+
+# --- نظام التشغيل ---
+# ويندوز
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ماك
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# لينوكس
+*~
+
+# --- المحررات والبيئات ---
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains (WebStorm, etc.)
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Notepad++
+nppBackup/
+
+# --- الملفات المؤقتة ---
+*.tmp
+*.temp
+*.log
+*.bak
+*.swp
+*.swo
+
+# --- مجلدات الحزم (لو استخدمت npm مستقبلاً) ---
+node_modules/
+package-lock.json
+yarn.lock
+
+# --- ملفات البيلد (لو استخدمت build tools مستقبلاً) ---
+dist/
+build/
+.cache/
+
+# --- ملفات البيئة والإعدادات الحساسة ---
+.env
+.env.local
+.env.production
+*.key
+*.pem
